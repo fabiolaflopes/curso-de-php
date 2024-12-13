@@ -5,7 +5,7 @@ echo "Bem-Vindo(a) ao screen match!\n";
 $nomeFilme = "Top Gun - Maverick";
 $anoLancamento = $argv[1] ?? 2022;  
 
-$somaDeNotas = 9;
+$somaDeNotas = 8;
 $somaDeNotas += 6;
 $somaDeNotas += 8; 
 $somaDeNotas += 7.5;
