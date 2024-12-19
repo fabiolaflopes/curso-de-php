@@ -3,15 +3,17 @@
 echo "Bem-Vindo(a) ao screen match!\n";
 
 $nomeFilme = "Top Gun - Maverick";
-$anoLancamento = $argv[1] ?? 2022;  
 
-$somaDeNotas = 8;
-$somaDeNotas += 6;
-$somaDeNotas += 8; 
-$somaDeNotas += 7.5;
-$somaDeNotas += 5;
+$anoLancamento = 2022;
 
-$notaFilme = $somaDeNotas / 5;
+$quantidadeDeNotas = $argc -1;
+$somaDeNotas = 0; 
+
+for ($conrador = 1; $contador < $argc; $contador++){
+    $somaDeNotas += $argv [$contador];
+}
+
+$notaFilme = $somaDeNotas / $quantidadeDeNotas;
 $planoPrime = true; 
 
 $inlcuidoNoPlano = $planoPrime || $anoLancamento < 2020;
@@ -27,3 +29,11 @@ if ($anoLancamento > 2022){
 } else {
     echo "Esse filme não é um lançamento";
 }
+
+$genero = match  ($nomeFilme) {
+    "Top Gun - Maverick" => "ação",
+    "Thor: Ragnarok" => "super-herói",
+    "Se beber não case" => "comédia",
+};
+
+echo "O gênero do filme é: $genero";
